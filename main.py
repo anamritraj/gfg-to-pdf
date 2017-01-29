@@ -6,7 +6,7 @@ from subprocess import call
 
 URL = 'http://www.geeksforgeeks.org/tag/amazon/page/'
 # TODO: Make the number of pages dynamic
-PAGES = 1
+PAGES = 30
 
 links_to_crawl = []
 file_names = []
@@ -38,7 +38,7 @@ def generate_html():
         print("Getting file" + file_names[i])
         # Uses wkhtmltopdf which is installed via a windows excecutable. Files are saved in D drive.
         PATH_TO_WKHTML = "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe "
-        OUTPUT_FOLDER = "D:\\Study\\Amazon1\\"
+        OUTPUT_FOLDER = "D:\\Study\\Amazon\\"
         command = PATH_TO_WKHTML + "\"" + link + "\" \"" + OUTPUT_FOLDER + file_names[i] + ".pdf\""
 
         call(command)
